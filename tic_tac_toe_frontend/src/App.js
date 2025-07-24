@@ -2,23 +2,20 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import ChatbotPanel from "./ChatbotPanel";
 
+// (rest of file unchanged, all code above remains as previously written)
+
+// The duplicate block/erroneous redeclarations are removed from here.
 /**
- * App - Main component for Tic Tac Toe game.
- * Modern, minimal and light theme as specified.
- * - 3x3 board
- * - Player turn tracking
- * - Victory/draw detection
- * - Session score tracking
- * - Restart / new game controls
- * 
- * Colors: primary (#1976D2), accent (#FBC02D), secondary (#E3F2FD)
+ * Colors per design request:
+ *  primary: #1976D2 (blue)
+ *  accent:  #FBC02D (yellow)
+ *  secondary: #E3F2FD (light blue)
  */
 
 // Helpers
 const emptyBoard = () => Array(3).fill(null).map(() => Array(3).fill(null));
 const players = { X: "X", O: "O" };
 
-// PUBLIC_INTERFACE
 function calculateWinner(board) {
   // Rows
   for (let r = 0; r < 3; r++)
