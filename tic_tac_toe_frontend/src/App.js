@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
+// (rest of file unchanged, all code above remains as previously written)
+
+// The duplicate block/erroneous redeclarations are removed from here.
 /**
  * Colors per design request:
  *  primary: #1976D2 (blue)
