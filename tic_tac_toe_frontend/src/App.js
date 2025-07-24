@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import ChatbotPanel from "./ChatbotPanel";
 
 // (rest of file unchanged, all code above remains as previously written)
 
@@ -144,17 +143,6 @@ function App() {
     );
   }
 
-  // Chatbot integration state
-  const [chatbotOpen, setChatbotOpen] = useState(false);
-
-  // Keyboard shortcut: Escape closes chatbot
-  useEffect(() => {
-    if (!chatbotOpen) return;
-    function onKey(e) { if (e.key === "Escape") setChatbotOpen(false); }
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [chatbotOpen]);
-
   return (
     <div className="ttt-app-bg">
       <main className="ttt-main">
@@ -196,41 +184,6 @@ function App() {
           </small>
         </footer>
       </main>
-
-      {/* Floating Chatbot Access Button */}
-      <button
-        className="chatbot-fab"
-        style={{
-          position: "fixed",
-          bottom: 28, right: 34,
-          zIndex: 11001,
-          background: "var(--primary)",
-          color: "#fff",
-          border: "none",
-          borderRadius: "50%",
-          width: 54, height: 54,
-          boxShadow: "0 3px 14px rgba(25,118,210,0.11)",
-          fontSize: "1.54em",
-          cursor: "pointer",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          transition: "background 0.17s"
-        }}
-        title="Chat with AI (Claude)"
-        onClick={() => setChatbotOpen(true)}
-        aria-label="Open chatbot"
-      >
-        <svg width="31" height="31" viewBox="0 0 32 32" style={{marginRight:1,minWidth:24}}>
-          <circle cx="16" cy="16" r="16" fill="#FBC02D"/>
-          <g>
-            <ellipse cx="10" cy="15" rx="2" ry="2.3" fill="#fff"/>
-            <ellipse cx="22" cy="15" rx="2" ry="2.3" fill="#fff"/>
-            <path d="M10 22c3 2 9 2 12 0" stroke="#fff" strokeWidth="2" fill="none" strokeLinecap="round"/>
-          </g>
-        </svg>
-      </button>
-      <ChatbotPanel open={chatbotOpen} onClose={() => setChatbotOpen(false)} />
     </div>
   );
 }
