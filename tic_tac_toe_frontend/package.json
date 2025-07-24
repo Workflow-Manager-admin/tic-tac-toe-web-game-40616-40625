@@ -30,5 +30,16 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3"
+  },
+  "proxy": "http://localhost:3000",
+  "chatbot-proxy-script": "node anthropic-proxy.js",
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^2.6.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1"
   }
 }
